@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>
+        JTH Playground
+    </title>
+    <script src="JTH.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        window.onload = function () {
+            /*HOME TEMPLATE*/
+            window['home'] = {
+                code: ["document.querySelectorAll('.active').forEach(function a(b){(b.classList.remove('active'))})", "document.getElementById('Playground').classList.add('active')"],
+                tag: "center",
+                id: "pageDiv",
+                child: [{
+                    tag: "h1",
+                    cursor: "pointer",
+                    child: [{
+                        tag: "label",
+                        text: "JTH playground",
+                    },],
+                },
+                {
+                    tag: "textarea",
+                    rows: "20",
+                    cols: "150",
+                    value: '{\n\t"tag":"label",\n\t"text":"Hello World!!!"\n}',
+                    tabindex: "0",
+                    id: "data",
+                    onkeyup: 'try{draw(document.getElementById("data").value,\'document.getElementById("renderArea").innerHTML\')}catch(e){document.getElementById("renderArea").innerHTML=e}',
+                },
+                {
+                    tag: "div",
+                    child: [{
+                        tag: "input",
+                        type: "button",
+                        value: "Render",
+                        tabindex: "1",
+                        onclick: 'try{draw(document.getElementById("data").value,\'document.getElementById("renderArea").innerHTML\')}catch(e){document.getElementById("renderArea").innerHTML=e}',
+                    },],
+                },
+                {
+                    tag: "div",
+                    id: "renderArea",
+                },
+                ],
+            };
+
+            /*HELP TEMPLATE*/
+            window['help'] = {
+                code: ["document.querySelectorAll('.active').forEach(function a(b){(b.classList.remove('active'))})", "document.getElementById('Help').classList.add('active')"],
+                tag: "div",
+                id: "pageDiv",
+                child: [
+                    {
+                        tag: "h1",
+                        text: "HELP",
+                    },
+                ],
+            };
+            /*JTH OBJECT*/
+
+            var obj = new JTH({
+                data: [{
+                    id: "menu",
+                    tag: "div",
+                    class: "vertical-menu",
+                    child: [{
+                        tag: "a",
+                        "id": "Playground",
+                        class: "active",
+                        text: "Playground",
+                        onclick: "draw( home ,'document.getElementById(\"pageDiv\").innerHTML')"
+                    },
+                    {
+                        tag: "a",
+                        "id": "Help",
+                        text: "Help",
+                        onclick: "draw( help ,'document.getElementById(\"pageDiv\").outerHTML')"
+                    },
+                    ],
+                },
+                {
+                    template: "home"
+                },
+                {
+                    tag: "footer",
+                    child: [{
+                        tag: "p",
+                        style: "position: absolute; bottom: 5px",
+                        text: "This Page Designed In <b>JTH</b>"
+                    }]
+                }
+                ],
+                div: "document.body.innerHTML",
+                template: {
+                    home: home,
+                    help: help,
+                },
+            }).render();
+        };
+    </script>
+</head>
+
+</html>
