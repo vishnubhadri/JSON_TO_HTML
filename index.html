@@ -61,41 +61,41 @@
                                 tag: "h1",
                                 text: "HELP",
                             },
-                        ],
-                    },
-                    {
-                        "tag": "div",
-                        "id": "left-panal",
-                        "class": ["split", "left"],
-                        "child": [
                             {
-                                "loop": {
-                                    "for": {
-                                        "var": "a=0",
-                                        "tem": "$a<help_menu.length",
-                                        "code": "$a++",
-                                        "stmt": [
-                                            {
-                                                "tag": "h3",
-                                                "child": [
+                                "tag": "div",
+                                "id": "left-panal",
+                                "class": ["split", "left"],
+                                "child": [
+                                    {
+                                        "loop": {
+                                            "for": {
+                                                "var": "a=0",
+                                                "tem": "$a<help_menu.length",
+                                                "code": "$a++",
+                                                "stmt": [
                                                     {
-                                                        "tag": "label",
-                                                        "text": "$help_menu[$a].title",
-                                                        "cursor": "pointer"
-                                                    },
-                                                ],
-                                                "onclick": "draw( $help_menu[$a].content , 'document.getElementById(\"right-panal\").innerHTML' )"
+                                                        "tag": "h3",
+                                                        "child": [
+                                                            {
+                                                                "tag": "label",
+                                                                "text": "$help_menu[$a].title",
+                                                                "cursor": "pointer"
+                                                            },
+                                                        ],
+                                                        "onclick": "draw( $help_menu[$a].content , 'document.getElementById(\"right-panal\").innerHTML' )"
+                                                    }
+                                                ]
                                             }
-                                        ]
+                                        }
                                     }
-                                }
+                                ]
+                            },
+                            {
+                                "tag": "div",
+                                "id": "right-panal",
+                                "class": ["split", "right"]
                             }
-                        ]
-                    },
-                    {
-                        "tag": "div",
-                        "id": "right-panal",
-                        "class": ["split", "right"]
+                        ],
                     }
                 ];
             /*JTH OBJECT*/
