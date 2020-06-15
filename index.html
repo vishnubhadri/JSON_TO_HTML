@@ -5,11 +5,13 @@
         JTH Playground
     </title>
     <script src="JTH.js"></script>
+    <script src="help.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script>
         window.onload = function () {
             /*HOME TEMPLATE*/
-            window['home'] = {
+            window['home'] =
+            {
                 code: ["document.querySelectorAll('.active').forEach(function a(b){(b.classList.remove('active'))})", "document.getElementById('Playground').classList.add('active')"],
                 tag: "center",
                 id: "pageDiv",
@@ -48,57 +50,95 @@
             };
 
             /*HELP TEMPLATE*/
-            window['help'] = {
-                code: ["document.querySelectorAll('.active').forEach(function a(b){(b.classList.remove('active'))})", "document.getElementById('Help').classList.add('active')"],
-                tag: "div",
-                id: "pageDiv",
-                child: [
+            window['help'] =
+                [
                     {
-                        tag: "h1",
-                        text: "HELP",
+                        code: ["document.querySelectorAll('.active').forEach(function a(b){(b.classList.remove('active'))})", "document.getElementById('Help').classList.add('active')"],
+                        tag: "div",
+                        id: "pageDiv",
+                        child: [
+                            {
+                                tag: "h1",
+                                text: "HELP",
+                            },
+                        ],
                     },
-                ],
-            };
+                    {
+                        "tag": "div",
+                        "id": "left-panal",
+                        "class": ["split", "left"],
+                        "child": [
+                            {
+                                "loop": {
+                                    "for": {
+                                        "var": "a=0",
+                                        "tem": "$a<help_menu.length",
+                                        "code": "$a++",
+                                        "stmt": [
+                                            {
+                                                "tag": "h3",
+                                                "child": [
+                                                    {
+                                                        "tag": "label",
+                                                        "text": "$help_menu[$a].title",
+                                                        "cursor": "pointer"
+                                                    },
+                                                ],
+                                                "onclick": "draw( $help_menu[$a].content , 'document.getElementById(\"right-panal\").innerHTML' )"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "tag": "div",
+                        "id": "right-panal",
+                        "class": ["split", "right"]
+                    }
+                ];
             /*JTH OBJECT*/
 
-            var obj = new JTH({
-                data: [{
-                    id: "menu",
-                    tag: "div",
-                    class: "vertical-menu",
-                    child: [{
-                        tag: "a",
-                        "id": "Playground",
-                        class: "active",
-                        text: "Playground",
-                        onclick: "draw( home ,'document.getElementById(\"pageDiv\").innerHTML')"
+            var obj = new JTH(
+                {
+                    data: [{
+                        id: "menu",
+                        tag: "div",
+                        class: "vertical-menu",
+                        child: [{
+                            tag: "a",
+                            "id": "Playground",
+                            class: "active",
+                            text: "Playground",
+                            onclick: "draw( home ,'document.getElementById(\"pageDiv\").innerHTML')"
+                        },
+                        {
+                            tag: "a",
+                            "id": "Help",
+                            text: "Help",
+                            onclick: "draw( help ,'document.getElementById(\"pageDiv\").outerHTML')"
+                        },
+                        ],
                     },
                     {
-                        tag: "a",
-                        "id": "Help",
-                        text: "Help",
-                        onclick: "draw( help ,'document.getElementById(\"pageDiv\").outerHTML')"
+                        template: "home"
                     },
+                    {
+                        tag: "footer",
+                        child: [{
+                            tag: "p",
+                            style: "position: absolute; bottom: 5px",
+                            text: "This Page Designed In <b>JTH</b>"
+                        }]
+                    }
                     ],
-                },
-                {
-                    template: "home"
-                },
-                {
-                    tag: "footer",
-                    child: [{
-                        tag: "p",
-                        style: "position: absolute; bottom: 5px",
-                        text: "This Page Designed In <b>JTH</b>"
-                    }]
-                }
-                ],
-                div: "document.body.innerHTML",
-                template: {
-                    home: home,
-                    help: help,
-                },
-            }).render();
+                    div: "document.body.innerHTML",
+                    template: {
+                        home: home,
+                        help: help,
+                    },
+                }).render();
         };
     </script>
 </head>

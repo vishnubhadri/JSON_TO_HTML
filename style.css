@@ -18,3 +18,22 @@
   background-color: #000000;
   color: white;
 }
+.split {
+  height: auto;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  width: 20%;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  width: 80%;
+}
