@@ -1,10 +1,11 @@
 window['help_menu'] = [
     {
-        "title": "test",
+        "title": "Intro",
         "content": [
             {
-                tag: "h1",
-                text: "test",
+                class: "title",
+                "tag": "p",
+                "text":"title i am batman"
             }
         ]
     }, {

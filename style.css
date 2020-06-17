@@ -37,3 +37,8 @@
   right: 0;
   width: 80%;
 }
+
+.title{
+  color: darkviolet;
+  text-decoration: underline;
+}
