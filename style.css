@@ -20,9 +20,9 @@
 }
 .split {
   height: auto;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  overflow-x: hidden;
+  overflow-x: auto;
   padding-top: 20px;
 }
 
@@ -42,3 +42,7 @@
   color: darkviolet;
   text-decoration: underline;
 }
+.required:before {
+    content:" *";
+    color: red;
+  }

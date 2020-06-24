@@ -27,7 +27,7 @@
                     tag: "textarea",
                     rows: "20",
                     cols: "150",
-                    value: '{\n\t"tag":"label",\n\t"text":"Hello World!!!"\n}',
+                    value: '[\n\t{\n\t\t"tag":"label",\n\t\t"text":"Hello World!!!"\n\t}\n]',
                     tabindex: "0",
                     id: "data",
                     onkeyup: 'try{draw(document.getElementById("data").value,\'document.getElementById("renderArea").innerHTML\')}catch(e){document.getElementById("renderArea").innerHTML=e}',
@@ -58,14 +58,14 @@
                         id: "pageDiv",
                         child: [
                             {
-                                tag: "h1",
-                                text: "HELP",
-                            },
-                            {
                                 "tag": "div",
                                 "id": "left-panal",
                                 "class": ["split", "left"],
                                 "child": [
+                                    {
+                                        tag: "h1",
+                                        text: "HELP",
+                                    },
                                     {
                                         "loop": {
                                             "for": {
@@ -93,7 +93,9 @@
                             {
                                 "tag": "div",
                                 "id": "right-panal",
-                                "class": ["split", "right"]
+                                "class": ["split", "right"],
+                                "wordWrap": "break-word"
+
                             }
                         ],
                     }
