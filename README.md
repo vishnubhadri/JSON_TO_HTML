@@ -10,4 +10,4 @@ for more visit https://github.com/vishnubhadri/JTH
 ### File reference to develope
 * src/index.html home page holds the script that Intilize DOM.
 * src/JTH.js is the library of JTH (https://github.com/vishnubhadri/JTH).
-* src/html.js is the JSON content which loads in the help tab. The key title that load on the left side and the coresponding content that generate on other half of the page when the user click the title.
+* src/help.js is the JSON content which loads in the help tab. The key title that load on the left side and the coresponding content that generate on other half of the page when the user click the title.
