@@ -4,8 +4,8 @@ JTH is the small Script that render and execute in DOM. It's work as single page
 for more visit https://github.com/vishnubhadri/JTH
 
 ## Screenshots
-<img src="https://github.com/vishnubhadri/JSON_TO_HTML/blob/master/Screenshot/Screenshot (2).png" width="50%" height="50%" alt="Playground">
-<img src="https://github.com/vishnubhadri/JSON_TO_HTML/blob/master/Screenshot/Screenshot (3).png" width="50%" height="50%" alt="Help Screen">
+<img src="https://github.com/vishnubhadri/JSON_TO_HTML/blob/master/screenshots/Screenshot%20(2).png" width="50%" height="50%" alt="Playground">
+<img src="https://github.com/vishnubhadri/JSON_TO_HTML/blob/master/screenshots/Screenshot%20(3).png" width="50%" height="50%" alt="Help Screen">
 
 ### File reference to develope
 * src/index.html home page holds the script that Intilize DOM.
