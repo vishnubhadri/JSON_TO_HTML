@@ -218,6 +218,50 @@ window['help_menu'] = [
 						"text":"window"
 					}
 				]
+			},
+			{
+				"text": "\\var",
+				"tag": "h4"
+			},
+			{
+				"tag": "p",
+				"text": "\\var is used to define variable. The var can be access in any place of javascript and template. The scope of var will maintain till the process get compiled."
+				+"var can be declared and it cannot in different files and after the program got executed. The scope will be destroyed"
+			},
+			{
+				"tag":"code",
+				"text":"[{'var':'_a=10'},{'tag':'textarea','text':'$a'}]"
+			},
+			{
+				"text": "let",
+				"tag": "h4"
+			},
+			{
+				"tag": "p",
+				"text": "let is similar but the scope of let is different from var. the let variable can only access inside the object and cannot access over the child object."
+			},
+			{
+				"tag":"code",
+				"text":"[{'let':'_a=10'},{'let':'_a=20','tag':'textarea','text':'$a'}] //print 20"
+			}
+			,
+			{
+				"text": "window[]",
+				"tag": "h4"
+			},
+			{
+				"tag": "p",
+				"text": "window is the global keyword which hold the data across the tab. it holds all the global classes variables and other properties."
+				+" When you want to access the variable from other file or after the class got executed use window[]."
+			},
+			{
+				"tag": "p",
+				"class":["required"],
+				"text": "Syntax: window['function_name/variabel_name']=value"
+			},
+			{
+				"tag":"code",
+				"text":"{'code':'window[\"a\"]=10'}"
 			}
 		]
 	},
@@ -228,6 +272,24 @@ window['help_menu'] = [
 				class: "title",
 				"tag": "h1",
 				"text": "Conditional Statements"
+			},
+			{
+				"tag":"ul",
+				"child":
+				[
+					{
+						"tag":"li",
+						"text":"if"
+					},
+					{
+						"tag":"li",
+						"text":"if else"
+					},
+					{
+						"tag":"li",
+						"text":"switch"
+					}
+				]
 			}
 		]
 	},
@@ -238,16 +300,24 @@ window['help_menu'] = [
 				class: "title",
 				"tag": "h1",
 				"text": "Looping Statements"
-			}
-		]
-	},
-	{
-		"title": "Div",
-		"content": [
+			},
 			{
-				class: "title",
-				"tag": "h1",
-				"text": "Div"
+				"tag":"ul",
+				"child":
+				[
+					{
+						"tag":"li",
+						"text":"for"
+					},
+					{
+						"tag":"li",
+						"text":"do"
+					},
+					{
+						"tag":"li",
+						"text":"while"
+					}
+				]
 			}
 		]
 	},
@@ -268,6 +338,28 @@ window['help_menu'] = [
 				class: "title",
 				"tag": "h1",
 				"text": "In-Build Functions"
+			},
+			{
+				"tag": "ul",
+				"child": [
+					{
+						tag:"li",
+						text:"render",
+					}
+				]
+			},
+			{
+				"tag":"h3",
+				"text":"render"
+			},
+			{
+				"tag":"p",
+				"text":"render is an function from the JTH class. it is function that render the JTH."
+				+"Whenever you create an JTH object by default it won't render. you must call render function from the object to draw the JSON as HTML in the given element"
+			},
+			{
+				"tag":"code",
+				"text":"let o=new JTH({...}).render(); let o=new JTH({...}); o.render();"
 			}
 		]
 	},
@@ -278,6 +370,49 @@ window['help_menu'] = [
 				class: "title",
 				"tag": "h1",
 				"text": "Miscellaneous"
+			},
+			{
+				"tag": "ul",
+				"child": [
+					{
+						tag:"li",
+						text:"draw",
+					}
+				]
+			},
+			{
+				"tag":"br"
+			},
+			{
+				"tag": "h2",
+				"text": "draw"
+			},
+			{
+				"tag":"p",
+				"text":"Draw is the internal function that used inside the json value. Draw is used to write/over-write the page with new content."
+			},
+			{
+				"tag":"code",
+				"text":"{'onclick':'draw('{\"tag\":\"textarea\"}','document.body')'}"
+			},
+			{
+				"tag":"p",
+				"text":"The above code used to remove and render the textarea in the body of the html."
+				+"draw function takes two arguments."
+			},
+			{
+				"tag":"ul",
+				"child":[
+					{
+						"tag":"li",
+						"class":["required"],
+						"text":"first argument: it is the json object or the JTH object which is the data that used to draw on the page."
+					},
+					{
+						"tag":"li",
+						"text":"second argument: it takes the page element to render the given input. Default: document.body"
+					}
+				]
 			}
 		]
 	}
